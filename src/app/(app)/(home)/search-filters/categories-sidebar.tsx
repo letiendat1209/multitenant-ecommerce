@@ -7,22 +7,29 @@ import {
     SheetTitle,
 } from "@/components/ui/sheet";
 
-import { CustomCategory } from "../types";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTRPC } from "@/trpc/client";
+import { useQuery } from "@tanstack/react-query";
+import { CategoriesGetManyOutput } from "@/modules/categories/types";
 
 interface Props {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    data: CustomCategory[]
 };
 
-export const CategoriesSidebar = ({ open, onOpenChange, data }: Props) => {
+export const CategoriesSidebar = (
+    {   open,
+        onOpenChange,
+    }: Props) => {
+
+    const trpc = useTRPC();
+    const { data } = useQuery(trpc.categories.getMany.queryOptions());
 
     const router = useRouter();
 
-    const [parentCategories, setParentCategories] = useState<CustomCategory[] | null>(null);
-    const [selectedCategory, setSelectedCategory] = useState<CustomCategory | null>(null);
+    const [parentCategories, setParentCategories] = useState<CategoriesGetManyOutput | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<CategoriesGetManyOutput[1] | null>(null);
 
     // Nếu có cat cha thì hiển thị, ngược lại thì hiển thị cat gốc
     const currentCategories = parentCategories ?? data ?? [];
@@ -33,9 +40,9 @@ export const CategoriesSidebar = ({ open, onOpenChange, data }: Props) => {
         onOpenChange(open);
     };
 
-    const handleCategoryClick = (category: CustomCategory) => {
+    const handleCategoryClick = (category: CategoriesGetManyOutput[1]) => {
         if (category.subcategories && category.subcategories.length > 0) {
-            setParentCategories(category.subcategories as CustomCategory[]);
+            setParentCategories(category.subcategories as CategoriesGetManyOutput);
             setSelectedCategory(category);
         } else {
             // This is leaf category, no sub categories 
