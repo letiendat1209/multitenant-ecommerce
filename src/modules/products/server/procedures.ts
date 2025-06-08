@@ -16,14 +16,18 @@ export const productsRouter = createTRPCRouter({
         ).query(async ({ ctx, input }) => {
         const where: Where = {};
         
-        if (input.minPrice) {
+        if (input.minPrice && input.maxPrice) {
             where.price = {
-            greater_than_equals: input.minPrice,
+                greater_than_equals: input.minPrice,
+                less_than_equals: input.maxPrice,
             }
-        }   
-        if (input.maxPrice) {
+        } else if (input.minPrice) {
             where.price = {
-            less_than_equals: input.maxPrice,
+                greater_than_equals: input.minPrice,
+            }
+        } else if (input.maxPrice) {
+            where.price = {
+                less_than_equals: input.maxPrice,
             }
         }
         
