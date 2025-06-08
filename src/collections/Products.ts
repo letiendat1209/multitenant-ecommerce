@@ -25,6 +25,12 @@ export const Products: CollectionConfig = {
             name: "category",
             type: "relationship",
             relationTo: "categories",
+            hasMany: true,
+        },
+        {
+            name: "tags",
+            type: "relationship",
+            relationTo: "tags",
             hasMany: false,
         },
         {
