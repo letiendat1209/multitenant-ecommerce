@@ -22,7 +22,7 @@ export const categoriesRouter = createTRPCRouter({
                     ...(doc as Category),
                     subcategories: undefined,
                 }))
-            }));
+        }));
 
         return formattedData;
     })
