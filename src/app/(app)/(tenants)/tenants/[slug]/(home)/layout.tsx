@@ -14,8 +14,8 @@ const Layout = async ({ children, params }: LayoutProps) => {
     const { slug } = await params;
     const queryClient = getQueryClient();
     void queryClient.prefetchQuery(trpc.tenants.getOne.queryOptions({
-            slug,
-        }))
+        slug,
+    }));
 
     return (
         <div className="min-h-screen bg-[#F4F4F0] flex flex-col">
