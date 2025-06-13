@@ -101,8 +101,9 @@ export const ProductView = ({ productId, tenantSlug }: ProductViewProps) => {
                             <div className="flex flex-col gap-4 p-6 border-b">
                                 <div className="flex flex-row items-center gap-2">
                                     <CartButton
-                                        productId={productId}
-                                        tenantSlug={tenantSlug}
+                                    isPurchased={data.isPurchased}
+                                    productId={productId}
+                                    tenantSlug={tenantSlug}
                                     />
                                     <Button
                                         variant="elevated"
