@@ -45,7 +45,7 @@ export const useCartStore = create<CartState>()(
                     tenantCarts: {
                         ...state.tenantCarts,
                         [tenantSlug]: {
-                            productIds: []
+                            productIds: [],
                         },
                     },
                 })),
