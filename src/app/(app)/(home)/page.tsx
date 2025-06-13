@@ -24,7 +24,6 @@ const Page = async ({ searchParams }: Props) => {
         <HydrationBoundary state={dehydrate(queryClient)}>
             <ProductListView />
         </HydrationBoundary>
-     );
+    );
 }
- // http://localhost:3000/education
 export default Page;
