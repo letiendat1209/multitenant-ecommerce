@@ -76,6 +76,8 @@ export const SignUpView = () => {
                                 <span className={cn("text-5xl font-semibold", poppins.className)}>
                                     LTD
                                 </span>
+                            </Link>
+
                                 <Button
                                     asChild
                                     variant="ghost"
@@ -85,7 +87,6 @@ export const SignUpView = () => {
                                         Sign In
                                     </Link>
                                 </Button>
-                            </Link>
                         </div>
                         <h1 className="text-4xl font-medium">
                             Join over 1000 creators earning money on LTD.

@@ -71,6 +71,8 @@ export const SignInView = () => {
                                 <span className={cn("text-5xl font-semibold", poppins.className)}>
                                     LTD
                                 </span>
+                            </Link>
+                                
                                 <Button
                                     asChild
                                     variant="ghost"
@@ -80,7 +82,6 @@ export const SignInView = () => {
                                         Sign Up
                                     </Link>
                                 </Button>
-                            </Link>
                         </div>
                         <h1 className="text-4xl font-medium">
                             Welcome back to LTD.
