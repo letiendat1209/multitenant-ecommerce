@@ -132,8 +132,7 @@ export const SignInView = () => {
                     </form>
                 </Form>
             </div>
-            <div
-                className="h-screen w-full lg:col-span-2 hidden lg:block"
+            <div className="h-screen w-full lg:col-span-2 hidden lg:block"
                 style={{
                     backgroundImage: "url('/auth-bg.png')",
                     backgroundSize: "cover",
