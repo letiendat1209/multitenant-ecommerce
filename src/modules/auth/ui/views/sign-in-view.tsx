@@ -73,15 +73,15 @@ export const SignInView = () => {
                                 </span>
                             </Link>
                                 
-                                <Button
-                                    asChild
-                                    variant="ghost"
-                                    size="sm"
-                                    className="text-base border-none underline">
-                                    <Link prefetch href="/sign-up">
-                                        Sign Up
-                                    </Link>
-                                </Button>
+                            <Button
+                                asChild
+                                variant="ghost"
+                                size="sm"
+                                className="text-base border-none underline">
+                                <Link prefetch href="/sign-up">
+                                    Sign Up
+                                </Link>
+                            </Button>
                         </div>
                         <h1 className="text-4xl font-medium">
                             Welcome back to LTD.
@@ -98,7 +98,6 @@ export const SignInView = () => {
                                         <Input {...field}>
                                         </Input>
                                     </FormControl>
-                                    
                                     <FormMessage />
                                 </FormItem>
                             )}
