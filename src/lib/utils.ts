@@ -15,7 +15,7 @@ export function generateTenantURL(tenantSlug: string) {
 
 
   const protocol = "https";
-  const domain = process.env.NEXT_PUBLIC_ROOT_DOMAIN;
+  const domain = process.env.NEXT_PUBLIC_ROOT_DOMAIN!;
 
   return `${protocol}://${tenantSlug}.${domain}`;
 }
