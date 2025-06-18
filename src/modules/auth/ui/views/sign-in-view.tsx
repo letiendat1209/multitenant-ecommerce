@@ -58,13 +58,14 @@ export const SignInView = () => {
     const onSubmit = (values: z.infer<typeof loginSchema>) => {
         login.mutate(values);
     };
+    const formContainerClass = "flex flex-col gap-8 p-4 lg:p-16";
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-5">
             <div className="bg-[#F4F4F0] h-screen w-full lg:col-span-3 overflow-auto">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}
-                        className="flex flex-col gap-8 p-4 lg:p-16"
+                        className={formContainerClass}
                     >
                         <div className="flex items-center justify-between mb-8">
                             <Link href="/">
