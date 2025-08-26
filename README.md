@@ -31,6 +31,9 @@ A powerful, extensible multitenant e-commerce platform built with **Next.js**, *
 
 ## ⚙️ Cài đặt
 
+Tài khoản admin: admin@demo.com
+                 admin
+
 ### 📦 Yêu cầu
 
 - Node.js >= 18
